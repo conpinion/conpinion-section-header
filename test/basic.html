@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>conpinion-section-header basic tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../lib/webcomponentsjs/webcomponents.js"></script>
+  <script src="../lib/web-component-tester/browser.js"></script>
+  <script src="../lib/test-fixture/test-fixture-mocha.js"></script>
+  <script src="../lib/coffee-script/extras/coffee-script.js"></script>
+  <link rel="import" href="../lib/test-fixture/test-fixture.html">
+  <link rel="import" href="../build/conpinion-section-header.html">
+</head>
+
+<body>
+
+  <test-fixture id="element">
+    <template>
+      <conpinion-section-header color="red">
+        A section header
+      </conpinion-section-header>
+    </template>
+  </test-fixture>
+
+  <script type="text/coffeescript">
+
+    element = null
+
+    describe 'conpinion-section-header', ->
+
+      beforeEach -> element = fixture 'element'
+
+      it 'should contain a div styles as a semantic ui ribbon', ->
+        expect(element.querySelector('div.ui')).to.be.ok
+
+      it 'should set a color class', ->
+        expect(element.querySelector('div.ui.red')).to.be.ok
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+
+<!--
+Copyright (c) 2015 TELCAT MULTICOM GmbH. All rights reserved.
+Copyright (c) 2016 conpinion GbR. All rights reserved.
+
+Element: conpinion-section-header
+Version: 0.1.3
+Description: A section header component
+-->
+
+
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="conpinion-section-header">
+
+  <link rel="stylesheet" href="../semantic-ui/dist/components/reset.css">
+  <link rel="stylesheet" href="../semantic-ui/dist/components/label.css">
+
+  <template>
+<style>.ui.ribbon.label {
+  border-radius: 0 3px 3px 0;
+}
+.ui.ribbon.label.no-after {
+  left: -1rem;
+  padding-left: 1rem;
+}
+.ui.ribbon.label.no-after:after {
+  content: none;
+}
+</style>
+
+    <div class$="[[_join('ui ribbon no-after label large', color)]]">
+      <content></content>
+    </div>
+  </template>
+
+<script type="text/javascript">(function() {
+  Polymer({
+    is: 'conpinion-section-header',
+    properties: {
+      color: {
+        type: String,
+        value: 'orange'
+      }
+    },
+    _join: function() {
+      var arg;
+      return ((function() {
+        var i, len, results;
+        results = [];
+        for (i = 0, len = arguments.length; i < len; i++) {
+          arg = arguments[i];
+          results.push(arg);
+        }
+        return results;
+      }).apply(this, arguments)).join(' ');
+    }
+  });
+
+}).call(this);
+</script>
+
+</dom-module>

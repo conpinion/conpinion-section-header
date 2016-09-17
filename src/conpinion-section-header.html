@@ -1,0 +1,31 @@
+<!-- build:process -->
+<!--
+<%= copyright %>
+Element: <%= pkg.name %>
+Version: <%= pkg.version %>
+Description: <%= pkg.description %>
+-->
+<!-- /build -->
+
+<link rel="import" href="../lib/polymer/polymer.html">
+
+<dom-module id="conpinion-section-header">
+
+  <link rel="stylesheet" href="../lib/semantic-ui/dist/components/reset.css">
+  <link rel="stylesheet" href="../lib/semantic-ui/dist/components/label.css">
+
+  <template>
+    <!-- build:style inline conpinion-section-header -->
+    <link rel="stylesheet" href="conpinion-section-header.css"/>
+    <!-- /build -->
+
+    <div class$="[[_join('ui ribbon no-after label large', color)]]">
+      <content></content>
+    </div>
+  </template>
+
+  <!-- build:script inline conpinion-section-header -->
+  <script src="conpinion-section-header.js"></script>
+  <!-- /build -->
+
+</dom-module>
